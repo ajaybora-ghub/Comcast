@@ -4,8 +4,8 @@ package com.java.test;
  *   Using two pointer to solve the problem.
  *   Left Pointer is set to 0 index of array
  *   Right Pointer is set to last index of array
- *   if sum if elements at left and right pointer = total return the left, right indexes
- * 	 Else if sum is > total decrement right pointer by 1
+ *   If sum if elements at left and right pointer = total return the left, right indexes
+ *   Else if sum is > total decrement right pointer by 1
  *   Else if sum < total increment left pointer by 1
  *   If no match return null
  * 
