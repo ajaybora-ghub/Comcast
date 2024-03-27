@@ -1,16 +1,16 @@
 package com.java.test;
 
+
 /*
- *   Using two pointer approach to solve the problem.
+ *   Using two pointer to solve the problem.
  *   Left Pointer is set to 0 index of array
  *   Right Pointer is set to last index of array
- *   If sum if elements at left and right pointer = total return the left, right indexes
- *   Else if sum is > total decrement right pointer by 1
- *   Else if sum < total increment left pointer by 1
+ *   If sum of elements at left and right pointers = total return the left, right indexes
+ *   Else if sum of elements at left and right pointers is > total decrement right pointer by 1
+ *   Else if sum of elements at left and right pointers < total increment left pointer by 1
  *   If no match return null
  * 
  */
-
 public class SortedArraySum {
 
 	public static void main(String[] args) {
@@ -19,32 +19,35 @@ public class SortedArraySum {
 		int total = 9;
 		int result[] = sortedArraySum(numbers, total);
 		
-		System.out.println("[" + result[0] + "," + result[1] + "]");
+		if(result!=null) {
+			System.out.println("[" + result[0] + "," + result[1] + "]");
+		}
 
 	}
 	
 
     public static int[] sortedArraySum(int[] numbers, Integer total) {
         int[] pair = new int[2];
-        int leftPivot = 0;
-        int rightPivot = numbers.length - 1;
+        int leftPointer = 0;
+        int rightPointer = numbers.length - 1;
 
-        while (leftPivot < rightPivot) {
+        while (leftPointer < rightPointer) {
 
-            if (numbers[leftPivot] + numbers[rightPivot] == total) {
-            	pair[0]=leftPivot + 1;
-            	pair[1]=rightPivot + 1;
+            if (numbers[leftPointer] + numbers[rightPointer] == total) {
+            	pair[0]=leftPointer + 1;
+            	pair[1]=rightPointer + 1;
                 return pair;
             }
 
-            else if (numbers[leftPivot] + numbers[rightPivot] < total) {
-            	leftPivot++;
+            else if (numbers[leftPointer] + numbers[rightPointer] < total) {
+            	leftPointer++;
             }
 
             else {
-            	rightPivot--;
+            	rightPointer--;
             }
         }
+        
 
         return null;
     }
