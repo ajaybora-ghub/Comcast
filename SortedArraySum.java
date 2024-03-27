@@ -2,7 +2,7 @@ package com.java.test;
 
 
 /*
- *   Using two pointer to solve the problem.
+ *   Using two pointer's to solve the problem.
  *   Left Pointer is set to 0 index of array
  *   Right Pointer is set to last index of array
  *   If sum of elements at left and right pointers = total return the left, right indexes
